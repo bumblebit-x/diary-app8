@@ -1,11 +1,25 @@
-# Sample Snack app
+# Praktikum Pertemuan 8 - Mobile Programming
+## Diary App dengan Global State Management (Redux Toolkit + React-Redux)
 
-Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by scanning the **QR code** or use the iOS or Android emulators. When you're done, click **Save** and share the link!
+### Identitas Mahasiswa
+- **Nama:** Bembi Marvi Yuansa
+- **NIM:** 2430511088
+- **Kelas:** 5C
+- **Program Studi:** Teknik Informatika - Universitas Muhammadiyah Sukabumi
+- **Dosen Pengampu:** Prajoko, M.Kom
 
-When you're ready to see everything that Expo provides (or if you want to use your own editor) you can **Download** your project and use it with [expo cli](https://docs.expo.dev/get-started/installation/#expo-cli)).
+---
 
-All projects created in Snack are publicly available, so you can easily share the link to this project via link, or embed it on a web page with the `<>` button.
+### Perbedaan Local State, Global Redux State, dan Persistent Database
 
-If you're having problems, you can tweet to us [@expo](https://twitter.com/expo) or ask in our [forums](https://forums.expo.dev/c/expo-dev-tools/61) or [Discord](https://chat.expo.dev/).
-
-Snack is Open Source. You can find the code on the [GitHub repo](https://github.com/expo/snack).
+| Aspek | Local State (`useState`) | Global Redux State (`Redux Toolkit`) | Persistent Database (`MySQL / SQLite / API`) |
+| :--- | :--- | :--- | :--- |
+| **Cakupan Data** | Terbatas hanya di dalam satu komponen/screen tempat state dideklarasikan. | Terpusat (*Single Source of Truth*) dan dapat diakses oleh seluruh komponen/screen dalam aplikasi. | Tersimpan secara eksternal atau di penyimpanan permanen perangkat/server lintas sesi. |
+| **Ketahanan Data** | Hilang saat komponen *unmount* atau berpindah halaman. | Tersimpan di memori aplikasi selama aplikasi berjalan, namun **reset ke `initialState`** saat aplikasi di-reload/restart. | **Persisten (permanen)**; data tetap aman meskipun aplikasi ditutup atau perangkat dimatikan. |
+| **Contoh pada `diary-app8`** | Input sementara pada form (`title`, `body`, `mood`) sebelum tombol simpan ditekan. | Daftar `entries`, status `liked` (favorit), dan `moodFilter` yang dipakai lintas screen (Home, Detail, Edit, Favorites). | Penyimpanan permanen seluruh catatan diary pengguna ke backend REST API & database MySQL. |
+<img width="472" height="209" alt="Cuplikan layar 2026-11-18 000308" src="https://github.com/user-attachments/assets/27253e93-03fa-4ee0-8838-16bc158b0e16" />
+<img width="469" height="285" alt="Cuplikan layar 2026-11-18 000300" src="https://github.com/user-attachments/assets/751100ec-56d3-4441-9885-a793e4525bf5" />
+<img width="469" height="447" alt="Cuplikan layar 2026-11-18 000235" src="https://github.com/user-attachments/assets/147634f8-4a97-4e37-a5cd-5e0cf5a8d7fc" />
+<img width="474" height="460" alt="Cuplikan layar 2026-11-18 000228" src="https://github.com/user-attachments/assets/b0c6ec54-6a84-4708-8dbe-afdcb444cb1e" />
+<img width="467" height="284" alt="Cuplikan layar 2026-11-18 000220" src="https://github.com/user-attachments/assets/baa71e0a-d011-42f0-9317-6bab075f0bc2" />
+<img width="468" height="808" alt="Cuplikan layar 2026-11-18 000205" src="https://github.com/user-attachments/assets/468c2d15-fb78-4a1c-bad7-45cb63c11a65" />
